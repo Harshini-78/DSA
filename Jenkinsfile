@@ -2,21 +2,24 @@ pipeline {
     agent any
 
     stages {
+
         stage('Clone') {
             steps {
-                echo 'Cloning repo...'
+                echo 'Cloning repository...'
             }
         }
 
-        stage('Build') {
+        stage('Compile') {
             steps {
-                echo 'Building DSA project...'
+                echo 'Compiling Java code...'
+                bat 'javac Main.java'
             }
         }
 
         stage('Run') {
             steps {
-                echo 'Running code...'
+                echo 'Running Java program...'
+                bat 'java Main'
             }
         }
     }
