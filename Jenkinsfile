@@ -2,11 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('Create File') {
+        stage('Clone') {
             steps {
-                sh '''
-                echo "Hello from Jenkins" > myfile.txt
-                '''
+                echo 'Cloning repo...'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building DSA project...'
+            }
+        }
+
+        stage('Run') {
+            steps {
+                echo 'Running code...'
             }
         }
     }
