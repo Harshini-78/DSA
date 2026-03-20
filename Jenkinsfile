@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clone') {
-            steps {
-                echo 'Cloning repository...'
-            }
-        }
-
         stage('Compile') {
             steps {
                 echo 'Compiling Java code...'
